@@ -1,0 +1,95 @@
+{{ define "main" }} {{ partial "navbar" . }}
+
+<div class="container pt-5">
+  <h1 class="display-1 font-weight-bold text-uppercase text-center">
+    <text class="text-indigo">
+      Hack
+    </text>
+    <text class="text-turquoise">
+      Iloilo
+    </text>
+  </h1>
+</div>
+
+<div
+  class=""
+  style="background-image: url('/img/hack-iloilo-diesmo5-2019-entire-room.png'); background-position: center; background-size: 100%; height: 300px;"
+></div>
+
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row">
+      {{ range $.Site.Data.trinity }}
+      <div class="card border-0 col-lg-4 col-md-4 col-12">
+        <div class="card-body text-center">
+          <i class="{{.icon}} py-5"></i>
+          <h5 class="font-weight-bold">{{.title}}</h5>
+          <h6 class="font-weight-light">{{.tagline}}</h6>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<div
+  class="container-fluid py-5"
+  style="background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%) ;"
+>
+  <div class="row py-5">
+    <h5 class="text-center text-white font-weight-bold">
+      Bring your creativity, curiosity, and passion to Central Philippine
+      University first American-Sponsored Hackathon. A hackathon is a coding
+      event in which teams “hack” together to create an awesome project like a
+      game, website, or app. In 12 hours, you and/or your team will have the
+      opportunity to learn to use technology to solve some of today’s problems
+      and MAKE TOMORROW BETTER. Team up with some of the brightest minds in
+      Iloilo and—fueled by free food and the chance to win prizes—turn your
+      creative energy into award-winning projects that entertain and inspire.
+      Space is limited to the first 100 students who register!
+    </h5>
+  </div>
+</div>
+
+<div class="container py-5"></div>
+
+<div
+  class="container-fluid py-5"
+  style="background: linear-gradient(55deg, #2cb5e8 0%, #1fc8db 51%, #0fb8ad 85%) ;"
+>
+  <div class="container py-5">
+    <h2 class="text-center text-white font-weight-bold">
+      Assemble your team. Learn To Code. Make Tomorrow Better.
+    </h2>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row py-5">
+    {{range $.Site.Data.features}}
+    <div class="card border-0 col-lg-6 col-md-6 col-12 py-5">
+      <h2 class="font-weight-bold text-gradient m-auto">
+        {{.header}}
+      </h2>
+    </div>
+    <div class="card border-0 col-lg-6 col-md-6 col-12 py-5">
+      <img src="{{.img}}" alt="" class="w-100 m-auto" />
+    </div>
+    {{end}}
+  </div>
+</div>
+
+<section class="container-fluid py-5">
+  <div class="container text-center py-5">
+    <h1 class="text-turquoise">
+      Register for
+      <text class="text-indigo">
+        Free!
+      </text>
+    </h1>
+
+    <a href="" class="btn btn-lg btn-primary rounded-0">Register Now</a>
+  </div>
+</section>
+
+{{ end }}

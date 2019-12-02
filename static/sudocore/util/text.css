@@ -1,0 +1,40 @@
+.text-white {
+  color: #ffffff;
+}
+
+.display-1 {
+  font-size: 64px;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+.card-text {
+  font-size: 0.8rem;
+}
+.text-small {
+  font-size: 11px;
+}
+
+.text-indigo {
+  color: #47008e;
+}
+a.text-indigo:hover {
+  color: #3f0875;
+}
+.text-turquoise {
+  color: #01efe9;
+}
+a.text-turquoise:hover {
+  color: #0bada8;
+}
+.text-gradient {
+  background: -webkit-linear-gradient(#47008e, #01efe9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+a.text-gradient:hover {
+  background: -webkit-linear-gradient(#47008e, #01efe9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
