@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i|Muli&display=swap");
+
+body {
+  background-color: #202020;
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.btn-alpha {
+  color: #ffffff;
+  background-color: #fc164d;
+  border-color: #fc164d;
+}
+.btn-alpha:hover {
+  color: #fff;
+  background-color: rgb(233, 17, 67);
+  border-color: rgb(233, 17, 67);
+}
+
+.bg-alpha {
+  background-color: #fc164d !important;
+}
+
+a.bg-alpha:hover {
+  background-color: rgb(233, 17, 67) !important;
+}

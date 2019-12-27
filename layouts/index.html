@@ -1,95 +1,235 @@
-{{ define "main" }} {{ partial "navbar" . }}
-
-<div class="container pt-5">
-  <h1 class="display-1 font-weight-bold text-uppercase text-center">
-    <text class="text-indigo">
-      Hack
-    </text>
-    <text class="text-turquoise">
-      Iloilo
-    </text>
-  </h1>
-</div>
-
-<div
-  class=""
-  style="background-image: url('/img/hack-iloilo-diesmo5-2019-entire-room.png'); background-position: center; background-size: 100%; height: 300px;"
-></div>
-
-<div class="container-fluid py-5">
-  <div class="container">
+{{ define "main"}}
+<!--  -->
+<section id="alert" class="container pt-3">
+  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+    <strong>Hackers Unite!</strong> Subscribe to our newsletter to get notified when registration opens!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</section>
+<!--  -->
+<section id="hero" class="pb-5 text-center">
+  <div class="container py-5">
+    <h1 class="font-weight-bold text-uppercase">{{.Title}}</h1>
+    <h3 class="font-weight-light text-uppercase pb-4">
+      {{.Date.Format "Monday, January 2, 2006"}}
+    </h3>
     <div class="row">
-      {{ range $.Site.Data.trinity }}
-      <div class="card border-0 col-lg-4 col-md-4 col-12">
-        <div class="card-body text-center">
-          <i class="{{.icon}} py-5"></i>
-          <h5 class="font-weight-bold">{{.title}}</h5>
-          <h6 class="font-weight-light">{{.tagline}}</h6>
-        </div>
+      <div class="col-lg-2 col-md-2"></div>
+      <div class="col-lg-8 col-md-8 col-12">
+        <img src="/undraw/firmware.svg" alt="" class="card-img pb-4">
+      </div>
+      <div class="col-lg-2 col-md-2"></div>
+    </div>
+    <h4 class="font-weight-light pb-2"><i>{{.Content}}</i></h4>
+    <h2 class="font-weight-bold text-white pb-4">Register to {{.Title}} Here</h2>
+    <div class="row justify-content-center pb-4">
+      {{ range $.Site.Data.hero }}
+      <div class="col-lg-6 col-md-6 col-12 py-2">
+        <a href="{{.link}}" class="btn btn-alpha btn-block">{{.name}}</a>
       </div>
       {{ end }}
     </div>
   </div>
-</div>
-
-<div
-  class="container-fluid py-5"
-  style="background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%) ;"
->
-  <div class="row py-5">
-    <h5 class="text-center text-white font-weight-bold">
-      Bring your creativity, curiosity, and passion to Central Philippine
-      University first American-Sponsored Hackathon. A hackathon is a coding
-      event in which teams “hack” together to create an awesome project like a
-      game, website, or app. In 12 hours, you and/or your team will have the
-      opportunity to learn to use technology to solve some of today’s problems
-      and MAKE TOMORROW BETTER. Team up with some of the brightest minds in
-      Iloilo and—fueled by free food and the chance to win prizes—turn your
-      creative energy into award-winning projects that entertain and inspire.
-      Space is limited to the first 100 students who register!
-    </h5>
-  </div>
-</div>
-
-<div class="container py-5"></div>
-
-<div
-  class="container-fluid py-5"
-  style="background: linear-gradient(55deg, #2cb5e8 0%, #1fc8db 51%, #0fb8ad 85%) ;"
->
-  <div class="container py-5">
-    <h2 class="text-center text-white font-weight-bold">
-      Assemble your team. Learn To Code. Make Tomorrow Better.
-    </h2>
-  </div>
-</div>
-
-<div class="container py-5">
-  <div class="row py-5">
-    {{range $.Site.Data.features}}
-    <div class="card border-0 col-lg-6 col-md-6 col-12 py-5">
-      <h2 class="font-weight-bold text-gradient m-auto">
-        {{.header}}
-      </h2>
+</section>
+<!--  -->
+<section id="trinity" class="py-5">
+  <div class="container">
+    <div class="row">
+      {{ range $.Site.Data.trinity }}
+      <div class="col-lg-4 col-md-4 col-12 text-center py-5">
+        <img src="{{.icon}}" alt="" class="w-100 pb-2">
+        <h3 class="font-weight-bold">{{.name}}</h3>
+        <h5 class="font-weight-normal pb-4">{{.tagline}}</h5>
+        <a href="{{.link}}" class="btn btn-alpha px-4">Learn More</a>
+      </div>
+      {{end}}
     </div>
-    <div class="card border-0 col-lg-6 col-md-6 col-12 py-5">
-      <img src="{{.img}}" alt="" class="w-100 m-auto" />
+  </div>
+</section>
+<!--  -->
+<section id="about" class="py-5">
+  <div class="container bg-alpha rounded py-4 px-4">
+    {{ range $.Site.Data.about }}
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12 text-light m-auto">
+          <h2 class="font-weight-bold">About</h2>
+          <h6 class="font-weight-normal">
+            {{.content}}
+          </h6>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 m-auto">
+          <img src="{{.img}}" alt="" class="w-100">
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+<!--  -->
+<section id="prizes" class="py-5">
+  <div class="container">
+    <h2 class="font-weight-bold text-center pb-4">Prizes</h2>
+    <div class="row">
+      {{ range $.Site.Data.prizes }}
+      <div class="col-lg-4 col-md-4 col-12 text-center py-2">
+        <div class="btn-alpha rounded-pill py-3 text-white">
+          <h3 class="font-weight-bold">{{.rank}}</h3>
+          <h5 class="font-weight-normal">₱ {{.prize}}</h5>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+<!--  -->
+<section id="theme" class="py-5">
+  <div class="container">
+    {{range $.Site.Data.theme}}
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-12 m-auto">
+        <h2 class="font-weight-bold">Theme: {{.theme}}</h2>
+        <h6 class="font-weight-normal">
+          {{.description}}
+        </h6>
+      </div>
+      <div class="col-lg-5 col-md-6 col-12 m-auto">
+        <img src="{{.icon}}" alt="" class="w-100">
+      </div>
     </div>
     {{end}}
   </div>
-</div>
-
-<section class="container-fluid py-5">
-  <div class="container text-center py-5">
-    <h1 class="text-turquoise">
-      Register for
-      <text class="text-indigo">
-        Free!
-      </text>
-    </h1>
-
-    <a href="" class="btn btn-lg btn-primary rounded-0">Register Now</a>
+</section>
+<!--  -->
+<section id="schedule" class="py-5">
+  <div class="container text-center">
+    <h2 class="font-weight-bold">Schedule</h2>
+    <h4 class="font-weight-light pb-4">
+      {{.Date.Format "Monday, January 2, 2006"}}
+    </h4>
+    {{range $.Site.Data.schedule }}
+    <div class="row py-2">
+      <div class="col text-right">
+        <h6 class="font-weight-bold">{{.time}}</h6>
+      </div>
+      <div class="col text-left">
+        <h6 class="font-weight-normal">{{.task}}</h6>
+      </div>
+    </div>
+    {{end}}
   </div>
 </section>
+<!--  -->
+<section id="articles" class="py-5">
+  <div class="container">
+    <h2 class="font-weight-bold text-white text-center">Articles</h2>
+    <div class="row">
+      {{range $.Site.Data.articles}}
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card">
+          <img src="{{.img}}" alt="" class="card-img">
+          <div class="card-body">
+            <h5 class="font-weight-bold text-dark text-uppercase">{{.title}}</h5>
+            <h6 class="font-weight-normal text-dark">{{.description}}</h6>
+            <a href="{{.link}}" target="_blank" class="btn btn-alpha px-4">Read More</a>
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+<!--  -->
+<section id="partners" class="py-5">
+  <div class="container">
+    <h2 class="text-white text-center font-weight-bold">Partners</h2>
+    <div class="row">
+      {{range $.Site.Data.partners}}
+      <div class="col-lg-4 col-md-6 col-6 m-auto">
+        <a href="{{.link}}" target="_blank" class="text-decoration-none">
+          <img src="{{.logo}}" alt="{{.alt}}" class="w-100" />
+        </a>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+<!--  -->
+<section id="FAQ" class="py-5">
+  <div class="container">
+    <h2 class="font-weight-bold text-center text-white pb-5">Frequently Asked Questions</h2>
+    <div class="row">
+      {{range $.Site.Data.FAQ}}
+      <div class="col-lg-6 col-md-6 col-12 m-auto py-2">
+        <div class="btn-alpha text-white rounded p-3">
+          <h6 class="font-weight-bold">{{.question}}</h6>
+          <h6 class="font-weight-light">{{.answer}}</h6>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+<!--  -->
+<section id="action" class="py-5">
+  <div class="container">
+    <h2 class="font-weight-bold text-center">Register to {{.Title}}</h2>
+    <div class="row py-4">
+      {{ range $.Site.Data.hero }}
+      <div class="col-lg-6 col-md-6 col-12 py-2">
+        <a href="{{.link}}" class="btn btn-alpha btn-block">{{.name}}</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!--  -->
+<section id="contact" class="py-5">
+  <div class="container pb-5">
+    <div class="">
+      <h1 class="font-weight-bold text-center">Contact Us</h1>
+      <p class="text-center">
+        We will get back to you as soon as possible. 
+      </p>
+    </div>
+    <form name="contact" method="POST" data-netlify="true">
+      <p>
+        <input
+          class="bg-transparent p-2 btn-block"
+          placeholder="Name"
+          type="text"
+          name="name"
+        />
+      </p>
+      <p>
+        <input
+          class="bg-transparent p-2 btn-block"
+          placeholder="E-Mail"
+          type="email"
+          name="email"
+        />
+      </p>
+      <p>
+        <div class="form-group">
+            <select class="bg-transparent form-control btn-block p-2 rounded-0" type="text" name="subject">
+              <option value="null">Subject</option>
+              <option value="General Inquiries">General Inquiries</option>
+              <option value="Web Services">Sponsorship Inquiries</option>
+            </select>
+          </div>
+      </p>
+      <p>
+        <textarea
+          class="bg-transparent p-2 btn-block"
+          placeholder="Message"
+          name="message"
+        ></textarea>
+      </p>
+      <button class="btn btn-lg btn-alpha px-5" type="submit">Send</button>
+    </form>
+  </div>  
+</section>
 
+<!--  -->
 {{ end }}

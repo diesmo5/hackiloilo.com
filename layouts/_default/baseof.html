@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ if .Title }} {{ .Title }} | {{ end }} Hack Iloilo</title>
+    {{ if .Description }}
+    <meta name="description" content="{{ .Description }}" />
+    {{ end }}
+    <title>Hack Iloilo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       href="../../img/logo/icon.png"
       type="image/x-icon"
     />
-    <title>{{ if .Title }} {{ .Title }} | {{ end }} DIESMO 5</title>
-    {{ if .Description }}
-    <meta name="description" content="{{ .Description }}" />
-    {{ end }}
-    <title>diesmo5</title>
 
-    <link rel="stylesheet" href="/sudocore/sudocore.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -23,12 +29,12 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="text-century">
-    <div class="text-yankees">
-      {{ block "main" . }}
-      {{ end }}
+  <body class="">
+    <div class="">
+      {{ block "main" . }} {{ end }}
     </div>
     {{ partial "footer" . }}
+    <!--  -->
     {{ partial "scriptcode" . }}
   </body>
 </html>

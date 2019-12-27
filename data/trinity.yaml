@@ -1,0 +1,17 @@
+Card 1:
+  name: Prizes
+  icon: "/undraw/winners.svg"
+  tagline: Money. Tech. & More.
+  link: "#prizes"
+
+Card 2:
+  name: Theme
+  icon: "/undraw/day_at_the_park.svg"
+  tagline: Create the Future.
+  link: "#theme"
+
+Card 3:
+  name: FAQ
+  icon: "/undraw/questions.svg"
+  tagline: More info?
+  link: "#partners"

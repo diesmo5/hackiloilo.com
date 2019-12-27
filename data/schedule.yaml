@@ -1,0 +1,44 @@
+A:
+  time: 8:30AM - 9:00AM
+  task: Sign In
+
+B:
+  time: 9:00AM - 9:15AM
+  task: Opening Keynote
+
+C:
+  time: 9:15AM
+  task: Hacking Begins
+
+D:
+  time: 12:00PM
+  task: Lunch
+
+E:
+  time: 6:00PM
+  task: Dinner
+
+F: 
+  time: 7:00PM
+  task: Dealine
+
+G: 
+  time: 7:00PM - 8:30PM
+  task: Presentations
+
+H:
+  time: 8:30PM
+  task: Exit Survey
+
+I:
+  time: 8:30PM - 8:40PM
+  task: Judging
+
+J: 
+  time: 8:40PM
+  task: Closing Statements
+
+K: 
+  time: 9:00PM
+  task: The End
+
